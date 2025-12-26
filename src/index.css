@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    transform: scale(1) rotate(2deg);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-1deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9) rotate(2deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes smoke {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-50px) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-flicker {
+  animation: flicker 0.1s infinite alternate;
+}
+
+.animate-smoke {
+  animation: smoke 2s ease-out forwards;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
